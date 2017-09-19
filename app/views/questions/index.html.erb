@@ -1,0 +1,13 @@
+<h1>Questions Index</h1>
+
+<% if current_user %>
+  <%= link_to "New Question", new_question_path %>
+<% end %>
+
+<% if @questions %>
+  <ul>
+    <% @questions.each do |question| %>
+      <li><%= link_to "#{question.title}", question_path(question) %></li>
+    <% end %>
+  </ul>
+<% end %>

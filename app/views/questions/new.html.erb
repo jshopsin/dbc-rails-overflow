@@ -1,0 +1,11 @@
+<h1>Create a Question</h1>
+
+<%= form_for @question, url: { action: "create" } do |f| %>
+  <%= f.label :title, "Title: " %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :body, "Question: " %>
+  <%= f.text_field :body %>
+  <br>
+  <%= submit_tag "Submit Question" %>
+<% end %>
