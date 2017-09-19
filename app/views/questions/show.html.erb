@@ -1,0 +1,19 @@
+<h1><%= @question.title %></h1>
+<p><%= @question.body %></p>
+<p>Created by: <%= @question.user.username %></p>
+<p>Created at: <%= @question.created_at %></p>
+
+
+<%= link_to "Answer this question", new_question_answer_path(@question) %>
+<br>
+<hr>
+<div>
+  <% @question.answers.each do |answer| %>
+    <article>
+      <p><%= answer.body %></p>
+      <p>Created by: <%= answer.user.username %></p>
+      <p>Created at: <%= answer.created_at %></p>
+      <hr>
+    </article>
+  <% end %>
+</div>
